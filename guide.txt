@@ -2,7 +2,7 @@
 Follow the step below to run the project:
 1. Open folder exchange-currency
 
-2. Open git bash or command prompt
+2. Open git bash or command prompt in exchange-currency folder
 
 3. Run command:
    docker build -t exchange-currency .
@@ -30,12 +30,14 @@ Follow the step below to run the project:
 Run cypress automated test:
 1. Run the project
 
-2. Open git bash or command prompt
+2. Open folder exchange-currency
 
-3. Run command:
+3. Open git bash or command prompt in exchange-currency folder (you will need 2 running cmd)
+
+4. Run command:
    ./node_modules/.bin/cypress open
 
-4. Select any .spec.js file you want to ts
+5. Select any .spec.js file you want to ts
 
 
 #######################################################
