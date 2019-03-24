@@ -1,0 +1,68 @@
+<html ng-app="exchangeCurrencyApp">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Foreign Exchange Currency</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/app.css" />
+  <script src="assets/lib/angular/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body ng-controller="ExchangeCurrencyController as ctrl">
+  <div class="container-fluid container-box">
+    <div class="row header">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="text-small">USD - United States Dollars</div>
+          </div>
+          <div class="col-9 col-sm-9 col-md-9 col-lg-9">
+            <div>USD</div>
+          </div>
+          <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+            <input type="number" class="form-control" id="txtNumber" ng-model="number">
+        </div>
+    </div>
+    <div id="currencyList" ng-cloak>
+        <div class="row card-currency" ng-repeat="curr in currencies">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                          <div class="col-9 col-sm-10 col-md-11 col-lg-11">
+                            <div class="card-title">{{ curr.currency }} <span class="item-right">{{ curr.rate * number }}</span></div>
+                            <div class="card-text text-bold text-small">{{ curr.currency }} -</div>
+                            <div class="card-text text-small">1 USD = {{ curr.currency }} {{ curr.rate }}</div>
+                          </div>
+                          <div class="col-3 col-sm-2 col-md-1 col-lg-1">
+                            <div class="btn btn-danger btn-delete-card" ng-click="ctrl.deleteCard($event.target)">-</div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="card card-small">
+                <div class="card-body">
+                    <div class="btn btn-add-more" id="btnAddMore" ng-click="ctrl.showCurrencyOptions()">
+                        <div class="btn btn-secondary item-left">+</div>
+                        <div class="card-title">Add More Currencies</div>
+                    </div>
+                    <div class="select-currency">
+                        <select id="ddCurrency" ng-model="ctrl.selectedCurrency">
+                            <option value="">Select currency</option>
+                            <option ng-repeat="c in allCurrencies" ng-value="c.currency">{{ c.currency }}</option>
+                        </select>
+                        <button type="button" class="btn btn-primary" id="btnSubmit" ng-click="ctrl.submit()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <script src="assets/controller/exchangeCurrencyController.js"></script>
+</body>
+</html>

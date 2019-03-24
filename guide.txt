@@ -1,0 +1,48 @@
+#######################################################
+Follow the step below to run the project:
+1. Open folder exchange-currency
+
+2. Open git bash or command prompt
+
+3. Run command:
+   docker build -t exchange-currency .
+
+4. Run command:
+   docker run -it \
+     -v ${PWD}:/usr/src/app \
+     -v /usr/src/app/node_modules \
+     --rm \
+     exchange-currency
+
+   or (for Windows):
+   winpty docker run -it \
+     -v %cd%:/usr/src/app \
+     -v /usr/src/app/node_modules \
+     --rm \
+     exchange-currency
+
+5. Open your browser
+
+6. Open http://localhost:3000
+
+
+#######################################################
+Run cypress automated test:
+1. Run the project
+
+2. Open git bash or command prompt
+
+3. Run command:
+   ./node_modules/.bin/cypress open
+
+4. Select any .spec.js file you want to ts
+
+
+#######################################################
+Structure code:
+----------------
+Html:
+src/index.html
+
+Controller:
+src/assets/controller/exchangeCurrencyController.js

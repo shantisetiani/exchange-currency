@@ -1,0 +1,58 @@
+.container-box{
+  width: 100%;
+  border: 1px solid #f94d2f;
+}
+
+.header{
+  padding: 8px 0;
+  border-bottom: 2px solid #f94d2f;
+}
+
+.card{
+  width: 100%;
+}
+
+.card .card-small{
+  height: 120px;
+}
+
+.item-left{
+  float: left;
+}
+
+.item-right{
+  float: right;
+}
+
+.text-bold{
+  font-weight: bold;
+}
+
+.text-big{
+  font-size: 15px;
+}
+
+.text-small{
+  font-size: 12px;
+}
+
+.btn.btn-add-more .card-title{
+  position: relative;
+  top: 4px;
+  left: 4px;
+}
+.select-currency select{
+  height: 32px;
+}
+
+@media screen and (min-width: 768px){
+  .select-currency select{
+    width: 83%;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .container-box{
+    width: 800px;
+  }
+}
