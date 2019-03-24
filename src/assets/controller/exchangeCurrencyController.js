@@ -50,12 +50,26 @@ exchangeCurrencyApp.controller('ExchangeCurrencyController', function PhoneListC
 
     //Push currency to defaultCurrency array
     self.submit = function () {
+        //Trying to get the selected currency data from allCurrencies that have stored from the API
         angular.forEach($scope.allCurrencies, function(value) {
             if(value.currency == self.selectedCurrency){
-                $scope.currencies.push({
-                    currency: value.currency,
-                    rate: value.rate
+                var isExist = 0;
+                //Check if the selected currency is already exist in current currency list
+                angular.forEach($scope.currencies, function(existingCurrency) {
+                    if(existingCurrency.currency == self.selectedCurrency){
+                        isExist = 1;
+                        return;
+                    }
                 });
+
+                if(isExist == 0){ //If the selected currency not exist, push the currency
+                    $scope.currencies.push({
+                        currency: value.currency,
+                        rate: value.rate
+                    });
+                }else{ //If the selected currency is already exist
+                    alert("Currency is already exist. Please select the other currencies!");
+                }
             }
         });
 

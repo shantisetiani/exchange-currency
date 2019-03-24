@@ -25,6 +25,10 @@ Follow the step below to run the project:
 
 6. Open http://localhost:3000
 
+note:
+if the steps above aren't working please just run command:
+ng serve --port 3000
+
 
 #######################################################
 Run cypress automated test:
